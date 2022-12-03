@@ -1,27 +1,3 @@
-########################################################################
-# Pathfinding Algorithm Visualizer program
-# Using tkinter
-# Python 3.8.5
-# Daria Vasileva 
-# 06/06/2021
-########################################################################
-# Sources used:
-#
-# @Tech With Tim: Python A* Path Finding Tutorial
-# https://www.youtube.com/watch?v=JtiK0DOeI4A&ab_channel=TechWithTim
-#
-# @Daksh3K: Astar-Pathfinding-Algorithm-Visualization
-# https://github.com/Daksh3K/Astar-Pathfinding-Algorithm-Visualization
-#
-# @nas-programmer: path-finding
-# https://github.com/nas-programmer/path-finding
-# https://www.youtube.com/watch?v=LF1h-8bEjP0&ab_channel=codeNULL
-#
-# @Davis MT: Python maze generator program
-# https://github.com/tonypdavis/PythonMazeGenerator
-# https://www.youtube.com/watch?v=Xthh4SEMA2o&ab_channel=DavisMT
-#########################################################################
-
 from tkinter import *
 from tkinter import ttk
 from queue import PriorityQueue
