@@ -34,7 +34,7 @@ A pathfinding algorithm is a computational method used to find the shortest path
 - DFS explores as far as possible along each branch before backtracking.
 - It may not guarantee the shortest path and is more suitable for certain types of graphs.
 
-Bellman-Ford Algorithm:
+5 Bellman-Ford Algorithm:
 
 - The Bellman-Ford algorithm is capable of handling graphs with negative edge weights.
 - It iterates over all edges multiple times, relaxing the distances until it converges to the correct shortest path.
