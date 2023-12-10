@@ -1,13 +1,13 @@
 
-##Language: Python 3.8.5
+## Language: Python 3.8.5
 1. Creating a maze by
-	- drawing and erasing walls by clicking on the grid
-	- placing walls randomly according to desired wall density
-	- generating a circular maze
-	- generating carved out maze
+- drawing and erasing walls by clicking on the grid
+- placing walls randomly according to desired wall density
+- generating a circular maze
+- generating carved out maze
 2. Finding the shortest path through the maze using one of two algorithms and visualizing the search process with desired speed of animation
-	- A\* Pathfinding Algorithm
-	- Breadth-First Pathfinding Algorithm
+- A\* Pathfinding Algorithm
+- Breadth-First Pathfinding Algorithm
 3. Reset the grid if necessary
 
 ## overview
@@ -19,7 +19,6 @@ A pathfinding algorithm is a computational method used to find the shortest path
 - This algorithm guarantees the shortest path, but it may not be efficient for large graphs.
 
 2 A Algorithm:*
-
 - A* (pronounced "A star") is an extension of Dijkstra's algorithm that incorporates heuristics to improve efficiency.
 - It uses a combination of the actual cost to reach a node (g), the estimated cost from the current node to the destination (h), and a weight factor (usually denoted as w) to determine the next node to explore.
 - A* is widely used in robotics and video games due to its efficiency and optimality.
@@ -35,8 +34,12 @@ A pathfinding algorithm is a computational method used to find the shortest path
 - It may not guarantee the shortest path and is more suitable for certain types of graphs.
 
 5 Bellman-Ford Algorithm:
-
 - The Bellman-Ford algorithm is capable of handling graphs with negative edge weights.
 - It iterates over all edges multiple times, relaxing the distances until it converges to the correct shortest path.
 - It's less efficient than D
+
+## references
+1. https://www.w3schools.com/
+2. https://discord.gg/python
+3. https://stackoverflow.com/
 
