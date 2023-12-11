@@ -43,3 +43,46 @@ A pathfinding algorithm is a computational method used to find the shortest path
 2. https://discord.gg/python
 3. https://stackoverflow.com/
 
+## demo 
+```
+import heapq
+
+def dijkstra(graph, start):
+    # Create a priority queue to store vertices and their distances
+    priority_queue = [(0, start)]
+    # Dictionary to store the shortest distance to each vertex
+    distance = {vertex: float('infinity') for vertex in graph}
+    # Set the distance to the start vertex as 0
+    distance[start] = 0
+
+    while priority_queue:
+        # Get the vertex with the smallest distance
+        current_distance, current_vertex = heapq.heappop(priority_queue)
+
+        # Check if the current distance is already greater than the known distance
+        if current_distance > distance[current_vertex]:
+            continue
+
+        # Update the distance for neighboring vertices
+        for neighbor, weight in graph[current_vertex].items():
+            distance_to_neighbor = current_distance + weight
+
+            # If a shorter path is found, update the distance
+            if distance_to_neighbor < distance[neighbor]:
+                distance[neighbor] = distance_to_neighbor
+                heapq.heappush(priority_queue, (distance_to_neighbor, neighbor))
+
+    return distance
+
+# Example usage:
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'A': 1, 'C': 2, 'D': 5},
+    'C': {'A': 4, 'B': 2, 'D': 1},
+    'D': {'B': 5, 'C': 1}
+}
+
+start_vertex = 'A'
+result = dijkstra(graph, start_vertex)
+print(f"Shortest distances from {start_vertex}: {result}")
+```
