@@ -43,7 +43,9 @@ A pathfinding algorithm is a computational method used to find the shortest path
 2. https://discord.gg/python
 3. https://stackoverflow.com/
 
-## demo 
+## demo  
+
+### Dijkstra's Algorithm: code
 ```
 import heapq
 
@@ -85,4 +87,81 @@ graph = {
 start_vertex = 'A'
 result = dijkstra(graph, start_vertex)
 print(f"Shortest distances from {start_vertex}: {result}")
+```
+### A Algorithm:* code
+```
+import heapq
+
+def astar(graph, start, goal):
+    # Priority queue to store nodes and their estimated total cost
+    priority_queue = [(0, start)]
+    # Dictionary to store the cost from the start to each node
+    cost_so_far = {start: 0}
+
+    while priority_queue:
+        current_cost, current_node = heapq.heappop(priority_queue)
+
+        if current_node == goal:
+            break
+
+        for neighbor, weight in graph[current_node].items():
+            new_cost = cost_so_far[current_node] + weight
+
+            if neighbor not in cost_so_far or new_cost < cost_so_far[neighbor]:
+                cost_so_far[neighbor] = new_cost
+                priority = new_cost + heuristic(goal, neighbor)
+                heapq.heappush(priority_queue, (priority, neighbor))
+
+    return cost_so_far
+
+def heuristic(goal, neighbor):
+    # This is a simple heuristic function, you may need to customize it based on your problem
+    # For example, you can use Euclidean distance for a 2D grid
+    return 0
+
+# Example usage:
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'A': 1, 'C': 2, 'D': 5},
+    'C': {'A': 4, 'B': 2, 'D': 1},
+    'D': {'B': 5, 'C': 1}
+}
+
+start_node = 'A'
+goal_node = 'D'
+result = astar(graph, start_node, goal_node)
+print(f"Cost from {start_node} to {goal_node}: {result[goal_node]}")
+```
+### Breadth-First Search (BFS) code
+```
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()  # Set to keep track of visited nodes
+    queue = deque([start])  # Queue for BFS traversal
+
+    while queue:
+        node = queue.popleft()  # Dequeue a node from the front of the queue
+        if node not in visited:
+            print(node, end=' ')  # Process the node (you can customize this part)
+            visited.add(node)  # Mark the node as visited
+
+            # Enqueue all adjacent nodes that haven't been visited yet
+            queue.extend(neighbor for neighbor in graph[node] if neighbor not in visited)
+
+# Example usage:
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F', 'G'],
+    'D': ['B'],
+    'E': ['B', 'H'],
+    'F': ['C'],
+    'G': ['C'],
+    'H': ['E']
+}
+
+start_node = 'A'
+print("BFS Traversal starting from node", start_node)
+bfs(graph, start_node)
 ```
