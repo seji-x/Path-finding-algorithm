@@ -240,4 +240,6 @@ g.add_edge(4, 3, -3)
 source_vertex = 0
 g.bellman_ford(source_vertex)
 ```
+## Target
+Sorting algorithms are essential processes in computer science that organize elements in a specific order within a dataset. The most common sorting algorithms include bubble sort, insertion sort, selection sort, merge sort, quicksort, and heapsort. Bubble sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. Insertion sort builds the sorted array one item at a time by repeatedly taking the next element and inserting it into the sorted portion. Selection sort divides the list into a sorted and an unsorted region, repeatedly selecting the smallest (or largest) element from the unsorted region and moving it to the sorted region. Merge sort employs a divide-and-conquer strategy, recursively dividing the array into halves, sorting them, and merging them back together. Quicksort also uses a divide-and-conquer approach but selects a "pivot" element to partition the array into segments that are individually sorted. Heapsort builds a binary heap and repeatedly extracts the maximum (or minimum) element until the heap is empty. Each sorting algorithm has its strengths and weaknesses, and the choice of algorithm depends on factors such as data size, distribution, and desired performance.
 ##  Thanks ^^
